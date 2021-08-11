@@ -9,9 +9,8 @@
     "tailwindcss": "^2.0.2",
     "tailwindcss-cli": "^0.1.2"
   },
-  "devDependencies": {},
   "scripts": {
-    "build:css": "tailwindcss build ./src/style.css -o ./dist/style.css",
+    "build:css": "tailwindcss build -i ./src/style.css -o ./dist/style.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
