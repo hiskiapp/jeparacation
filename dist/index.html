@@ -1,21 +1,42 @@
+<!-- 
+    Nama: Hiskia Anggi Puji Pratama
+    NIM: A11.2020.12730
+    
+    To Do List:
+    [x] HTML
+    [X] Elemen, Variable, Value
+    [x] Gambar & Video
+    [x] List di HTML
+    [x] Link di HTML
+    [x] Membuat Tabel
+    [x] Form
+    [x] CSS
+    [x] Javascript
+    [x] Jquery
+    [x] AJAX
+-->
+
+<!-- HTML -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jeparacation - Wisata dan Kuliner Jepara</title>
-    <link rel="stylesheet" href="style.css">
     <link href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAwLy0AAAAAAGrWAABq1gAAatYAAGrWAABqFgAAa1YAAAtWAAC4VgAAu9AAALvbAACT2wAA18MAAMf/AADv/wAA7/8AAP//AABq1gAAatYAAGrWAABq1gAAahYAAGtWAAALVgAAuFYAALvQAAC72wAAk9sAANfDAADH/wAA7/8AAO//AAD//wAA" rel="icon" type="image/x-icon" />
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="plugins/toastr/toastr.min.css">
 </head>
 <body>
     <header class="relative w-full px-8 text-gray-700 bg-white shadow-sm">
         <div class="container flex flex-col flex-wrap items-center justify-between py-5 mx-auto md:flex-row max-w-7xl">
-            <a href="#" class="relative z-10 flex items-center w-auto text-2xl font-bold leading-none text-black">Jeparacation.</span></a>
+            
+            <!-- Link -->
+            <a href="/" class="relative z-10 flex items-center w-auto text-2xl font-bold leading-none text-black">Jeparacation.</span></a>
             
             <nav class="relative top-0 left-0 flex items-center justify-end w-full h-full py-5 -ml-0 space-x-5 text-base md:-ml-5 md:py-0 md:absolute lg:pr-5" id="">
-                <!-- <a href="#home" class="relative font-medium leading-6 text-gray-600 transition duration-150 ease-out hover:text-gray-900">
-                    Home
-                </a> -->
                 <a href="#about" class="relative font-medium leading-6 text-gray-600 hover:text-gray-900">
                     Tentang
                 </a>
@@ -27,6 +48,9 @@
                 </a>
                 <a href="#locationmap" class="relative font-medium leading-6 text-gray-600 hover:text-gray-900">
                     Lokasi
+                </a>
+                <a href="#contact" class="relative font-medium leading-6 text-gray-600 hover:text-gray-900">
+                    Kontak
                 </a>
             </nav>
         </div>
@@ -52,6 +76,7 @@
                 </div>
                 <div class="w-full md:w-1/2">
                     <div class="w-full h-auto rounded-md sm:rounded-xl">
+                        <!-- Gambar -->
                         <img src="img/hero.png" class="">
                     </div>
                 </div>
@@ -59,11 +84,38 @@
         </div>
     </section>
     
-    <section class="py-20 bg-gray-50" id="about">
-        <p class="text-xs text-pink-500 uppercase mx-6 text-center font-bold">
-            Tentang
-        </p>
+    <section class="py-20 bg-white-50" id="about">
         <div class="container items-center max-w-6xl px-10 mx-auto sm:px-20 md:px-32 lg:px-16">
+            <p class="text-xs text-pink-500 uppercase mx-6 text-center font-bold">
+                Tentang
+            </p>
+            <h3 class="mt-1 font-bold text-gray-800 text-3xl md:text-4xl lg:text-5xl text-center mx-0">
+                Detail
+            </h3>
+            
+            <!-- Tabel -->
+            <table class="table-fixed md:w-1/2 w-full mx-auto my-10 align-top">
+                <tr>
+                    <th class="text-left align-top">Nama</th>
+                    <td class="align-top text-center">:</td>
+                    <td class="w-2/3">Jepara</td>
+                </tr>
+                <tr>
+                    <th class="text-left align-top">Julukan</th>
+                    <td class="align-top text-center">:</td>
+                    <td>Kota Ukir, Bumi Kartini, Scheveningen van Java</td>
+                </tr>
+                <tr>
+                    <th class="text-left align-top">Motto</th>
+                    <td class="align-top text-center">:</td>
+                    <td>Trus Karyo Tataning Bumi (bahasa Indonesia: Terus Bekerja Keras Membangun Daerah)</td>
+                </tr>
+                <tr>
+                    <th class="text-left align-top">Semboyan</th>
+                    <td class="align-top text-center">:</td>
+                    <td>The World Carving Centre</td>
+                </tr>
+            </table>
             <div class="flex flex-wrap items-center -mx-3">
                 <div class="order-1 w-full px-3 lg:w-1/2 lg:order-0">
                     <div class="w-full lg:max-w-md">
@@ -76,13 +128,14 @@
                     </div>
                 </div>
                 <div class="w-full px-3 mb-12 lg:w-1/2 order-0 lg:order-1 lg:mb-0">
-                    <iframe class="mt-5" width="100%" height="315" src="https://www.youtube.com/embed/BfQ3WZsMMyo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <!-- Video -->
+                    <iframe class="mt-5" width="100%" height="315" src="https://www.youtube.com/embed/Gthom89x0eg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
     </section>
     
-    <section class="w-full bg-white pt-7 pb-7 md:pt-20 md:pb-24" id="travel">
+    <section class="w-full bg-gray-50 pt-7 pb-7 md:pt-20 md:pb-24" id="travel">
         <p class="text-xs  text-pink-500 uppercase mx-6 mb-3 text-center font-bold">
             Wisata
         </p>
@@ -98,6 +151,8 @@
                 <h2 class="m-0 text-xl font-semibold leading-tight border-0 border-gray-300 lg:text-3xl md:text-2xl">
                     Wisata Keluarga
                 </h2>
+                
+                <!-- List -->
                 <ul class="p-0 m-0 mt-4 leading-6 border-0 border-gray-300">
                     <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
                         <span class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-blue-300 rounded-full"><span class="text-sm font-bold">✓</span></span> Kura-Kura Ocean Park, di Bulu
@@ -184,7 +239,7 @@
         </div>
     </section>
     
-    <section class="flex items-center justify-center py-10 text-white sm:py-16 md:py-24 lg:py-32 bg-gray-50" id="culinary">
+    <section class="flex items-center justify-center py-10 text-white sm:py-16 md:py-24 lg:py-32 bg-white" id="culinary">
         
         <div class="relative max-w-3xl px-10 text-center text-white auto lg:px-0">
             <div class="flex flex-col w-full md:flex-row">
@@ -252,7 +307,7 @@
         
     </section>
     
-    <section class="py-16 bg-white" id="locationmap">
+    <section class="py-16 bg-gray-50" id="locationmap">
         <div class="container px-8 mx-auto sm:px-12 xl:px-5">
             <p class="text-xs text-pink-500 uppercase mx-6 text-center font-bold">
                 Lokasi
@@ -264,47 +319,100 @@
             <iframe src="https://www.google.com/maps/d/embed?mid=1xyHB0yARu22oHGg1OZHP6-yO_Q4" width="100%" height="500" class="justify-center pt-12"></iframe>
         </div>
     </section>
-
-    <section class="py-16 bg-gray-50" id="locationmap">
+    
+    <section class="py-16 bg-white" id="contact">
         <div class="container px-8 mx-auto sm:px-12 xl:px-5">
             <p class="text-xs text-pink-500 uppercase mx-6 text-center font-bold">
-                Lainnya
+                Contact
+            </p>
+            <h3 class="mt-1 font-bold text-gray-800 text-3xl md:text-4xl lg:text-5xl text-center mx-0">
+                Hubungi Kami
+            </h3>
+            
+            <!-- Form -->
+            <form class="w-full max-w-lg mt-12 mx-auto" id="contact-form">
+                <div class="flex flex-wrap -mx-3 mb-6">
+                    <div class="w-full px-3">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                            Nama
+                        </label>
+                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white id="name" name="name" type="text" required>
+                        <p class="text-gray-600 text-xs italic">Nama lengkap.</p>
+                    </div>
+                </div>
+                <div class="flex flex-wrap -mx-3 mb-6">
+                    <div class="w-full px-3">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                            E-mail
+                        </label>
+                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white id="email" name="email" type="email" required>
+                        <p class="text-gray-600 text-xs italic">Pastikan format email benar.</p>
+                    </div>
+                </div>
+                <div class="flex flex-wrap -mx-3 mb-6">
+                    <div class="w-full px-3">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                            Pesan
+                        </label>
+                        <textarea class="no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white h-48 resize-none" id="message" name="message" minlength="10" required></textarea>
+                        <p class="text-gray-600 text-xs italic">Pesan minimal 10 karakter.</p>
+                    </div>
+                </div>
+                <div class="md:flex md:items-center">
+                    <div class="md:w-1/3">
+                        <button class="px-6 py-2 text-lg bg-indigo-600 hover:bg-indigo-700 text-white rounded" type="submit">
+                            Kirim
+                        </button>
+                    </div>
+                    <div class="md:w-2/3"></div>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+    <footer class="bg-gray-50 pt-4">
+        <div class="container items-center max-w-6xl px-10 mx-auto sm:px-20 md:px-32 lg:px-16">
+            <p class="text-xs text-pink-500 uppercase mx-6 text-center font-bold">
+                Statistik covid hari ini
             </p>
             <h3 class="mt-1 font-bold text-gray-800 text-3xl md:text-4xl lg:text-5xl text-center mx-0">
                 Detail
             </h3>
             
-            <table class="table-fixed md:w-1/2 w-full mx-auto mt-10 align-top">
+            <!-- Tabel -->
+            <table class="table-fixed md:w-1/2 w-full mx-auto my-10 align-top">
                 <tr>
-                    <th class="text-left align-top">Nama</th>
+                    <th class="text-left align-top">Tanggal</th>
                     <td class="align-top text-center">:</td>
-                    <td class="w-2/3">Jepara</td>
+                    <td class="w-2/3" id="covid_tanggal"><i>loading...</i></td>
                 </tr>
                 <tr>
-                    <th class="text-left align-top">Julukan</th>
+                    <th class="text-left align-top">Positif</th>
                     <td class="align-top text-center">:</td>
-                    <td>Kota Ukir, Bumi Kartini, Scheveningen van Java</td>
+                    <td id="covid_positif"><i>loading...</i></td>
                 </tr>
                 <tr>
-                    <th class="text-left align-top">Motto</th>
+                    <th class="text-left align-top">Dirawat</th>
                     <td class="align-top text-center">:</td>
-                    <td>Trus Karyo Tataning Bumi (bahasa Indonesia: Terus Bekerja Keras Membangun Daerah)</td>
+                    <td id="covid_dirawat"><i>loading...</i></td>
                 </tr>
                 <tr>
-                    <th class="text-left align-top">Semboyan</th>
+                    <th class="text-left align-top">Sembuh</th>
                     <td class="align-top text-center">:</td>
-                    <td>The World Carving Centre</td>
+                    <td id="covid_sembuh"><i>loading...</i></td>
+                </tr>
+                <tr>
+                    <th class="text-left align-top">Meninggal</th>
+                    <td class="align-top text-center">:</td>
+                    <td id="covid_meninggal"><i>loading...</i></td>
                 </tr>
             </table>
         </div>
-    </section>
-    
-    <footer class="bg-white">
         <div class="px-4 py-12 mx-auto space-y-8 sm:px-6 lg:px-8">
             <nav class="flex flex-wrap justify-center -mx-5 -my-2">
                 <div class="px-5 py-2">
                     <a href="#home" class="text-base leading-6 text-gray-500 hover:text-gray-900">
-                        Kembali ke Atas
+                        ^ Kembali ke Atas
                     </a>
                 </div>
             </nav>
@@ -314,4 +422,48 @@
         </div>
     </footer>
 </body>
+
+<!-- Javascript -->
+<!-- JQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<script src="plugins/toastr/toastr.min.js"></script>
+<script>
+    $(function() {
+        getCovidData();
+    });
+    
+    // AJAX
+    function getCovidData() {
+        const API_URL = 'https://apicovid19indonesia-v2.vercel.app/api/indonesia/harian';
+        
+        $.ajax({
+            url: API_URL,
+            success: function(result){
+                const data = result[ Object.keys(result).sort().pop() ];
+                const date = new Date();
+                
+                $('#covid_tanggal').html(`${date.getDate()} / ${date.getMonth() + 1} / ${date.getFullYear()}`);
+                $('#covid_positif').html(data.positif);
+                $('#covid_meninggal').html(data.meninggal);
+                $('#covid_sembuh').html(data.sembuh);
+                $('#covid_dirawat').html(data.dirawat);
+            },
+        });
+    }
+    
+    $('#contact-form').submit(function(e) {
+        e.preventDefault();
+        let data = $(this).serializeArray().reduce(function(obj, item) {
+            obj[item.name] = item.value;
+            return obj;
+        }, {});
+        
+        $('#message').val("");
+        
+        toastr.success(
+        `<b>${data.name}</b>, pesan kamu telah terkirim! kami akan segera mengirim balasannya, Silahkan cek inbox email <b>(${data.email})</b> kamu secara berkala.`,
+        `Success!`
+        );
+    });
+</script>
 </html>
