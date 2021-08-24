@@ -14,6 +14,7 @@
     [x] Javascript
     [x] Jquery
     [x] AJAX
+    [x] Hosting: https://jeparacation.hiskia.app
 -->
 
 <!-- HTML -->
@@ -34,9 +35,9 @@
         <div class="container flex flex-col flex-wrap items-center justify-between py-5 mx-auto md:flex-row max-w-7xl">
             
             <!-- Link -->
-            <a href="/" class="relative z-10 flex items-center w-auto text-2xl font-bold leading-none text-black">Jeparacation.</span></a>
+            <a href="." class="relative z-10 flex items-center w-auto text-2xl font-bold leading-none text-black">Jeparacation.</a>
             
-            <nav class="relative top-0 left-0 flex items-center justify-end w-full h-full py-5 -ml-0 space-x-5 text-base md:-ml-5 md:py-0 md:absolute lg:pr-5" id="">
+            <nav class="relative top-0 left-0 flex items-center justify-end w-full h-full py-5 -ml-0 space-x-5 text-base md:-ml-5 md:py-0 md:absolute lg:pr-5">
                 <a href="#about" class="relative font-medium leading-6 text-gray-600 hover:text-gray-900">
                     Tentang
                 </a>
@@ -98,7 +99,7 @@
                 <tr>
                     <th class="text-left align-top">Nama</th>
                     <td class="align-top text-center">:</td>
-                    <td class="w-2/3">Jepara</td>
+                    <td class="md:w-2/3">Jepara</td>
                 </tr>
                 <tr>
                     <th class="text-left align-top">Julukan</th>
@@ -336,7 +337,7 @@
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                             Nama
                         </label>
-                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white id="name" name="name" type="text" required>
+                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="name" name="name" type="text" required>
                         <p class="text-gray-600 text-xs italic">Nama lengkap.</p>
                     </div>
                 </div>
@@ -345,7 +346,7 @@
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                             E-mail
                         </label>
-                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white id="email" name="email" type="email" required>
+                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="email" name="email" type="email" required>
                         <p class="text-gray-600 text-xs italic">Pastikan format email benar.</p>
                     </div>
                 </div>
@@ -384,7 +385,7 @@
                 <tr>
                     <th class="text-left align-top">Tanggal</th>
                     <td class="align-top text-center">:</td>
-                    <td class="w-2/3" id="covid_tanggal"><i>loading...</i></td>
+                    <td class="md:w-2/3" id="covid_tanggal"><i>loading...</i></td>
                 </tr>
                 <tr>
                     <th class="text-left align-top">Positif</th>
@@ -421,49 +422,48 @@
             </p>
         </div>
     </footer>
-</body>
-
-<!-- Javascript -->
-<!-- JQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
-<script src="plugins/toastr/toastr.min.js"></script>
-<script>
-    $(function() {
-        getCovidData();
-    });
-    
-    // AJAX
-    function getCovidData() {
-        const API_URL = 'https://apicovid19indonesia-v2.vercel.app/api/indonesia/harian';
-        
-        $.ajax({
-            url: API_URL,
-            success: function(result){
-                const data = result[ Object.keys(result).sort().pop() ];
-                const date = new Date();
-                
-                $('#covid_tanggal').html(`${date.getDate()} / ${date.getMonth() + 1} / ${date.getFullYear()}`);
-                $('#covid_positif').html(data.positif);
-                $('#covid_meninggal').html(data.meninggal);
-                $('#covid_sembuh').html(data.sembuh);
-                $('#covid_dirawat').html(data.dirawat);
-            },
+    <!-- Javascript -->
+    <!-- JQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/toastr/toastr.min.js"></script>
+    <script>
+        $(function() {
+            getCovidData();
         });
-    }
-    
-    $('#contact-form').submit(function(e) {
-        e.preventDefault();
-        let data = $(this).serializeArray().reduce(function(obj, item) {
-            obj[item.name] = item.value;
-            return obj;
-        }, {});
         
-        $('#message').val("");
+        // AJAX
+        function getCovidData() {
+            const API_URL = 'https://apicovid19indonesia-v2.vercel.app/api/indonesia/harian';
+            
+            $.ajax({
+                url: API_URL,
+                success: function(result){
+                    const data = result[ Object.keys(result).sort().pop() ];
+                    const date = new Date();
+                    
+                    $('#covid_tanggal').html(`${date.getDate()} / ${date.getMonth() + 1} / ${date.getFullYear()}`);
+                    $('#covid_positif').html(data.positif);
+                    $('#covid_meninggal').html(data.meninggal);
+                    $('#covid_sembuh').html(data.sembuh);
+                    $('#covid_dirawat').html(data.dirawat);
+                },
+            });
+        }
         
-        toastr.success(
-        `<b>${data.name}</b>, pesan kamu telah terkirim! kami akan segera mengirim balasannya, Silahkan cek inbox email <b>(${data.email})</b> kamu secara berkala.`,
-        `Success!`
-        );
-    });
-</script>
+        $('#contact-form').submit(function(e) {
+            e.preventDefault();
+            let data = $(this).serializeArray().reduce(function(obj, item) {
+                obj[item.name] = item.value;
+                return obj;
+            }, {});
+            
+            $('#message').val("");
+            
+            toastr.success(
+            `<b>${data.name}</b>, pesan kamu telah terkirim! kami akan segera mengirim balasannya, Silahkan cek inbox email <b>(${data.email})</b> kamu secara berkala.`,
+            `Success!`
+            );
+        });
+    </script>
+</body>
 </html>
