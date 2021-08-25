@@ -1,2 +1,2 @@
 # jeparacation
-Landing page about Jepara tourism and culinary - Daskom UAS task
+Landing page about Jepara tourism and culinary - SA_PBW UAS Task
